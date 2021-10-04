@@ -1,0 +1,108 @@
+Holiday
+-------
++ name
++ date
+-------
++ __eq__()
++ __str__()
++ to_dict()
+
+-------------
+
+initializing:
+load from starter holidays file into list as Holiday objects
+for year between 2020 and 2025
+	get html from corresponding timeanddate site
+	parse html with BeautifulSoup
+	get table of holidays
+	for each row in table
+		get holiday name
+		get holiday date
+		create Holiday object with corresponding name and date
+		if holiday not already in list
+			add holiday to list
+			
+save to holiday date store
+
+
+
+editor:
+load holidays from holidays data store into list of Holidays
+set changes variable to False
+have user select menu option
+reprompt if necessary
+if add holiday
+	have user input holiday name
+	have user input holiday date
+	create Holiday from name and date
+	if holiday not already in list
+		add holiday to list
+		set changes to True
+		return to menu
+	elif holiday already in list
+		print error
+		return to menu
+	else bad input
+		print error
+		reprompt
+elif remove a holiday
+	have user input holiday name
+	have user input holiday date
+	if holiday in list
+		remove holiday
+		return to menu
+	else holiday not found
+		print error
+		reprompt
+elif save holidays
+	if changes have been made
+		have user confirm they want to save
+		if confirmed
+			save holidays to holidays data store
+			set changes to False
+			return to menu
+		elif not confirmed
+			cancel saving
+			return to menu
+		else bad input
+			print error
+			reprompt
+	else changes have not been made
+		print error
+		return to menu
+elif view holidays
+	have user input year
+	have user input week
+	if current year and week
+		have user input weather confirmation
+	if weather to be displayed
+		get weather for the week from api
+		for holidays in list
+			if holiday in next week
+				add holiday and weather to output
+		if no holidays
+			print no holidays message
+			return to menu
+		else
+			print holidays with weather
+			return to menu
+	else weather not to be displayed
+		filter holidays list to include dates with same week number as input
+		if no holidays
+			print no holidays message
+			return to menu
+		else
+			print holidays
+			return to menu
+elif exit
+	if unsaved changes
+		print unsaved changes message
+	have user confirm exit
+	if confirmed
+		print exit message
+		exit prorgam
+	elif not confirmed
+		return to menu
+	else bad input
+		print error
+		reprompt
