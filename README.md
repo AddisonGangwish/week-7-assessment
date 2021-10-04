@@ -1,4 +1,4 @@
-#Addison Gangwish - Week 7 Assessment
+# Addison Gangwish - Week 7 Assessment
 
 In this repository is a text based python application for loading and saving a list of holidays.
 
